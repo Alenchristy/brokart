@@ -7,11 +7,12 @@
             </div>
             <div class="col-2">
                 {% if messages %}
-                <p>
+                <div class="message-container">
                     {% for message in messages %}
-                    {{ message }}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                   
                     {% endfor %}
-                </p>
+                </div>
                 {% endif %}
                 <div class="form-container" style="height: 450px">
                     <div class="form-btn">
@@ -41,5 +42,3 @@
         </div>
     </div>
 </div>
-
-

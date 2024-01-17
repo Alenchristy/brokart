@@ -385,14 +385,35 @@ th:last-child{
     padding: 50px 0;
     background: radial-gradient(#fff, #ffd6d6);
 }
-.form-container{
+.message-container{
     background: #fff;
+    width: 300px;
+    height: fit-content;
+    position: relative;
     text-align: center;
     padding: 20px 0;
     margin: auto;
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
+.error{
+    color :red;
+}
+.success{
+    color:green;
+}
+.form-container{
+    background: #fff;
+    width: 300px;
+    height: 500px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
 .form-container span{
     font-weight: bold;
     padding: 0 10px;
@@ -404,7 +425,7 @@ th:last-child{
 .form-btn{
     display: inline-block;
 }
-.form-container form{
+.form-container form {
     max-width: 300px;
     padding: 0 20px;
     position: absolute;
@@ -430,9 +451,10 @@ form .btn:focus{
 #LoginForm{
     left: -300px;
 }
-#RegForm{
-    left: 0;
+#LoginForm {
+    left: -300px;
 }
+
 form a{
     font-size: 12px;
 }
