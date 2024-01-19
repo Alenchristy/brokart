@@ -33,7 +33,6 @@ def show_account(request):
             )
             success_message="User registerd successfully"
             messages.success(request,success_message)
-            context
         except Exception as e:
             error_message="Duplicate Inputs"
             messages.error(request,error_message)

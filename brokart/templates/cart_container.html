@@ -11,17 +11,17 @@
         <tr>
             <td>
                 <div class="cart-info">
-                    <img src="{{ cart_obj.product.image.url }}">
+                    <img src="{{ cart_item.product.image.url }}">
                     <div>
                         <p>{{ cart_item.product.title }}</p>
-                        <small>Price: $5{{ cart_item.Product.price }}</small>
+                        <small>Price: ${{ cart_item.product.price }}</small>
                         <br>
                         <a href="">Remove</a>
                     </div>
                 </div>
             </td>
-            <td><input type="number" disabled value="{{ cart_obj.product.quantity }}"></td>
-            <td>$5{{ cart_obj.Product.price }}</td>
+            <td><input type="number" disabled value="{{ cart_item.quantity }}"></td>
+            <td>${{ cart_item.product.price }}</td>
         </tr>
         {% endfor %}
     </tbody></table>

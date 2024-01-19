@@ -11,9 +11,9 @@ def show_cart(request):
         )
     context={'cart':cart_obj}
     return render(request,'cart.html',context)
+
 def add_to_cart(request):
     if request.POST:
-        print("fuck you########################################3")
         user=request.user
         customer=user.customer_profile
         quantity=int(request.POST.get('quantity'))
@@ -23,11 +23,15 @@ def add_to_cart(request):
             order_status=Order.CART_STAGE
         )
         product=Product.objects.get(pk=product_id)
-        orderd_item=OrderedItem.objects.get_or_create(
+        orderd_item, created=OrderedItem.objects.get_or_create(
             product=product,
-            owner=cart_obj,
-                                               
+            owner=cart_obj,                               
             )
-        
+        if created:
+            orderd_item.quantity=quantity
+            orderd_item.save()
+        else:
+            orderd_item.quantity=orderd_item.quantity+quantity
+            orderd_item.save()
     return redirect('cart')
 
