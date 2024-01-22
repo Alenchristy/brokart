@@ -22,6 +22,9 @@ class Order(models.Model):
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
 
+    def __str__(self) ->str:
+        return "order-{}-{}".format(self.id,self.owner.user)
+
 class OrderedItem(models.Model):
     product=models.ForeignKey(Product,on_delete=models.SET_NULL,null=True,related_name='added_carts')
     quantity=models.IntegerField(default=1)
